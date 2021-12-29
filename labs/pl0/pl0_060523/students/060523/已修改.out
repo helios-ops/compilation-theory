@@ -1,0 +1,316 @@
+    0  const 1=1,m = 7, n = 85;
+             ^
+Error   4: There must be an identifier to follow 'const', 'var', or 'procedure'.
+    1  var x, y, z, q, r;
+    1  
+    1  procedure multiply;
+    1  var a, b;
+    2  	procedure plus;
+    2  	var ss;
+    3  		procedure plusplus;
+    3  		var s;
+    4  		begin
+    5  			s := x
+    6  		end;
+
+    4 INT	0	4
+    5 LOD	3	3
+    6 STO	0	3
+    7 OPR	0	0
+
+    8  	begin
+    9  		ss :=x
+   10  	end;
+
+    8 INT	0	4
+    9 LOD	2	3
+   10 STO	0	3
+   11 OPR	0	0
+
+   12  
+   12  begin
+   13  	a := x; b := y; z := 0;
+   19  	while b > 0 do
+   23  	begin
+   23  		if odd b then z := z + a;
+   30  		a := 2 * a; b := b / 2;
+   38  	end
+   38  end;
+
+   12 INT	0	5
+   13 LOD	1	3
+   14 STO	0	3
+   15 LOD	1	4
+   16 STO	0	4
+   17 LIT	0	0
+   18 STO	1	5
+   19 LOD	0	4
+   20 LIT	0	0
+   21 OPR	0	11
+   22 JPC	0	39
+   23 LOD	0	4
+   24 OPR	0	6
+   25 JPC	0	30
+   26 LOD	1	5
+   27 LOD	0	3
+   28 OPR	0	2
+   29 STO	1	5
+   30 LIT	0	2
+   31 LOD	0	3
+   32 OPR	0	4
+   33 STO	0	3
+   34 LOD	0	4
+   35 LIT	0	2
+   36 OPR	0	5
+   37 STO	0	4
+   38 JMP	0	19
+   39 OPR	0	0
+
+   40  
+   40  procedure divide;
+   40  var w;
+   41  begin
+   42  	r := x; q := 0; w := y;
+   48  	while w > y do
+   52  	begin
+   52  		q := 2 * q; w := w / 2;
+   60  		if w <= r then
+   63  		begin
+   64  			r := r - w;
+   68  			q := q + 1;
+   72  		end;
+   72  	end
+   72  end;
+
+   41 INT	0	4
+   42 LOD	1	3
+   43 STO	1	7
+   44 LIT	0	0
+   45 STO	1	6
+   46 LOD	1	4
+   47 STO	0	3
+   48 LOD	0	3
+   49 LOD	1	4
+   50 OPR	0	11
+   51 JPC	0	73
+   52 LIT	0	2
+   53 LOD	1	6
+   54 OPR	0	4
+   55 STO	1	6
+   56 LOD	0	3
+   57 LIT	0	2
+   58 OPR	0	5
+   59 STO	0	3
+   60 LOD	0	3
+   61 LOD	1	7
+   62 OPR	0	10
+   63 JPC	0	72
+   64 LOD	1	7
+   65 LOD	0	3
+   66 OPR	0	3
+   67 STO	1	7
+   68 LOD	1	6
+   69 LIT	0	1
+   70 OPR	0	2
+   71 STO	1	6
+   72 JMP	0	48
+   73 OPR	0	0
+
+   74  
+   74  procedure gcd;
+   74  var f, g;
+   75  begin
+   76  	f := x;
+   78  	g := y;
+   80  	while f <> g do
+   84  	begin
+   84  		if f < g then g := g - f;
+   92  		if g < f then f := f - g;
+  100  	end
+  100  end;
+
+   75 INT	0	5
+   76 LOD	1	3
+   77 STO	0	3
+   78 LOD	1	4
+   79 STO	0	4
+   80 LOD	0	3
+   81 LOD	0	4
+   82 OPR	0	8
+   83 JPC	0	101
+   84 LOD	0	3
+   85 LOD	0	4
+   86 OPR	0	9
+   87 JPC	0	92
+   88 LOD	0	4
+   89 LOD	0	3
+   90 OPR	0	3
+   91 STO	0	4
+   92 LOD	0	4
+   93 LOD	0	3
+   94 OPR	0	9
+   95 JPC	0	100
+   96 LOD	0	3
+   97 LOD	0	4
+   98 OPR	0	3
+   99 STO	0	3
+  100 JMP	0	80
+  101 OPR	0	0
+
+  102  
+  102  begin
+  103  	x := m; y := n; call plus;
+ ^
+Error  11: Undeclared identifier.
+  107  	x := n; y := m; call plusplus;
+ ^
+Error  11: Undeclared identifier.
+  111  	x := 25; y := 3; call divide;
+  116  	x := 34; y := 36; call gcd;
+  121  end.
+
+  102 INT	0	8
+  103 LIT	0	7
+  104 STO	0	3
+  105 LIT	0	85
+  106 STO	0	4
+  107 LIT	0	85
+  108 STO	0	3
+  109 LIT	0	7
+  110 STO	0	4
+  111 LIT	0	25
+  112 STO	0	3
+  113 LIT	0	3
+  114 STO	0	4
+  115 CAL	0	41
+  116 LIT	0	34
+  117 STO	0	3
+  118 LIT	0	36
+  119 STO	0	4
+  120 CAL	0	75
+  121 OPR	0	0
+
+
+    0 JMP	0	102
+    1 JMP	0	12
+    2 JMP	0	8
+    3 JMP	0	4
+    4 INT	0	4
+    5 LOD	3	3
+    6 STO	0	3
+    7 OPR	0	0
+    8 INT	0	4
+    9 LOD	2	3
+   10 STO	0	3
+   11 OPR	0	0
+   12 INT	0	5
+   13 LOD	1	3
+   14 STO	0	3
+   15 LOD	1	4
+   16 STO	0	4
+   17 LIT	0	0
+   18 STO	1	5
+   19 LOD	0	4
+   20 LIT	0	0
+   21 OPR	0	11
+   22 JPC	0	39
+   23 LOD	0	4
+   24 OPR	0	6
+   25 JPC	0	30
+   26 LOD	1	5
+   27 LOD	0	3
+   28 OPR	0	2
+   29 STO	1	5
+   30 LIT	0	2
+   31 LOD	0	3
+   32 OPR	0	4
+   33 STO	0	3
+   34 LOD	0	4
+   35 LIT	0	2
+   36 OPR	0	5
+   37 STO	0	4
+   38 JMP	0	19
+   39 OPR	0	0
+   40 JMP	0	41
+   41 INT	0	4
+   42 LOD	1	3
+   43 STO	1	7
+   44 LIT	0	0
+   45 STO	1	6
+   46 LOD	1	4
+   47 STO	0	3
+   48 LOD	0	3
+   49 LOD	1	4
+   50 OPR	0	11
+   51 JPC	0	73
+   52 LIT	0	2
+   53 LOD	1	6
+   54 OPR	0	4
+   55 STO	1	6
+   56 LOD	0	3
+   57 LIT	0	2
+   58 OPR	0	5
+   59 STO	0	3
+   60 LOD	0	3
+   61 LOD	1	7
+   62 OPR	0	10
+   63 JPC	0	72
+   64 LOD	1	7
+   65 LOD	0	3
+   66 OPR	0	3
+   67 STO	1	7
+   68 LOD	1	6
+   69 LIT	0	1
+   70 OPR	0	2
+   71 STO	1	6
+   72 JMP	0	48
+   73 OPR	0	0
+   74 JMP	0	75
+   75 INT	0	5
+   76 LOD	1	3
+   77 STO	0	3
+   78 LOD	1	4
+   79 STO	0	4
+   80 LOD	0	3
+   81 LOD	0	4
+   82 OPR	0	8
+   83 JPC	0	101
+   84 LOD	0	3
+   85 LOD	0	4
+   86 OPR	0	9
+   87 JPC	0	92
+   88 LOD	0	4
+   89 LOD	0	3
+   90 OPR	0	3
+   91 STO	0	4
+   92 LOD	0	4
+   93 LOD	0	3
+   94 OPR	0	9
+   95 JPC	0	100
+   96 LOD	0	3
+   97 LOD	0	4
+   98 OPR	0	3
+   99 STO	0	3
+  100 JMP	0	80
+  101 OPR	0	0
+  102 INT	0	8
+  103 LIT	0	7
+  104 STO	0	3
+  105 LIT	0	85
+  106 STO	0	4
+  107 LIT	0	85
+  108 STO	0	3
+  109 LIT	0	7
+  110 STO	0	4
+  111 LIT	0	25
+  112 STO	0	3
+  113 LIT	0	3
+  114 STO	0	4
+  115 CAL	0	41
+  116 LIT	0	34
+  117 STO	0	3
+  118 LIT	0	36
+  119 STO	0	4
+  120 CAL	0	75
+  121 OPR	0	0
+

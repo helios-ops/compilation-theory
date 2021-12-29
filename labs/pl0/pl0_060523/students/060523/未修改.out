@@ -1,0 +1,31 @@
+    0  const 1=1,m = 7, n = 85;
+ ^
+Error   4: There must be an identifier to follow 'const', 'var', or 'procedure'.
+ ^
+Error   5: Missing ',' or ';'.
+ ^
+Error   7: Statement expected.
+ ^
+Error  11: Undeclared identifier.
+ ^
+Error  13: ':=' expected.
+ ^
+Error  24: The symbol can not be as the beginning of an expression.
+ ^
+Error  23: The symbol can not be followed by a factor.
+ ^
+Error   8: Follow the statement is an incorrect symbol.
+    4  var x, y, z, q, r;
+
+    1 INT	0	3
+    2 LIT	0	7
+    3 OPR	0	0
+
+ ^
+Error   9: '.' expected.
+
+    0 JMP	0	1
+    1 INT	0	3
+    2 LIT	0	7
+    3 OPR	0	0
+

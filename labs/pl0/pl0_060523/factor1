@@ -1,0 +1,17 @@
+const m=7, n = 85;
+var x, y, z;
+
+procedure multiply;
+var a, b;
+begin
+	a := x m; b := y 3; z := 0;
+	while b > 0 a do
+	begin
+		if odd b x then z := z + a;
+		a := 2 * a; b := b / 2;
+	end
+end;
+
+begin
+	x := m; y := n; call multiply;
+end.
